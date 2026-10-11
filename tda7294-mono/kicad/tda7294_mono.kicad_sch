@@ -1,0 +1,4090 @@
+(kicad_sch
+  (version 20230121)
+  (generator eeschema)
+  (uuid 7a7a4e8c-0dad-5eb1-a0f1-8c749594002e)
+  (paper "A3")
+  (title_block
+    (title "TDA7294 Mono Power Amplifier Module")
+    (date "2026-10-10")
+    (rev "1.0")
+    (company "Currently Amped")
+    (comment 1 "After the classic French TDA7294 module; 4-layer redesign")
+    (comment 2 "Rails +/-30..35 V idle, 4 ohm load"))
+  (lib_symbols
+    (symbol "Amplifier_Audio:TDA7294"
+      (pin_names
+        (offset 0.127))
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "U"
+        (at 10.16 6.35 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Value" "TDA7294"
+        (at 10.16 3.81 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Footprint" "Package_TO_SOT_THT:TO-220-15_P2.54x2.54mm_StaggerOdd_Lead4.58mm_Vertical"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27) italic) hide))
+      (property "Datasheet" "http://www.st.com/resource/en/datasheet/tda7294.pdf"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "ki_keywords" "audio amplifier"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "ki_description" "100V - 100W DMOS Audio Amplifier with Mute/St-by, TO-220-15"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "ki_fp_filters" "TO?220*StaggerOdd*"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (symbol "TDA7294_0_1"
+        (polyline
+          (pts
+            (xy -7.62 7.62)
+            (xy 7.62 0)
+            (xy -7.62 -7.62)
+            (xy -7.62 7.62))
+          (stroke
+            (width 0.254)
+            (type default))
+          (fill
+            (type background))))
+      (symbol "TDA7294_1_1"
+        (pin power_in line
+          (at 2.54 -5.08 90)
+          (length 2.54)
+          (name "SGND"
+            (effects
+              (font
+                (size 0.508 0.508))))
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)))))
+        (pin input line
+          (at 0 7.62 270)
+          (length 3.81)
+          (name "MUTE"
+            (effects
+              (font
+                (size 0.508 0.508))))
+          (number "10"
+            (effects
+              (font
+                (size 1.27 1.27)))))
+        (pin no_connect line
+          (at 0 2.54 270)
+          (length 2.54) hide
+          (name "NC"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "11"
+            (effects
+              (font
+                (size 1.27 1.27)))))
+        (pin no_connect line
+          (at 2.54 2.54 270)
+          (length 2.54) hide
+          (name "NC"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "12"
+            (effects
+              (font
+                (size 1.27 1.27)))))
+        (pin power_in line
+          (at -2.54 10.16 270)
+          (length 5.08)
+          (name "+Vs"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "13"
+            (effects
+              (font
+                (size 1.27 1.27)))))
+        (pin output line
+          (at 10.16 0 180)
+          (length 2.54)
+          (name "~"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "14"
+            (effects
+              (font
+                (size 1.27 1.27)))))
+        (pin power_in line
+          (at -2.54 -10.16 90)
+          (length 5.08)
+          (name "-Vs"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "15"
+            (effects
+              (font
+                (size 1.27 1.27)))))
+        (pin input line
+          (at -10.16 -2.54 0)
+          (length 2.54)
+          (name "-"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "2"
+            (effects
+              (font
+                (size 1.27 1.27)))))
+        (pin input line
+          (at -10.16 2.54 0)
+          (length 2.54)
+          (name "+"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "3"
+            (effects
+              (font
+                (size 1.27 1.27)))))
+        (pin power_in line
+          (at 0 -7.62 90)
+          (length 3.81)
+          (name "SIG_GND"
+            (effects
+              (font
+                (size 0.508 0.508))))
+          (number "4"
+            (effects
+              (font
+                (size 1.27 1.27)))))
+        (pin no_connect line
+          (at -2.54 2.54 270)
+          (length 2.54) hide
+          (name "NC"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "5"
+            (effects
+              (font
+                (size 1.27 1.27)))))
+        (pin passive line
+          (at 5.08 5.08 270)
+          (length 3.81)
+          (name "BOOT"
+            (effects
+              (font
+                (size 0.508 0.508))))
+          (number "6"
+            (effects
+              (font
+                (size 1.27 1.27)))))
+        (pin power_in line
+          (at -5.08 10.16 270)
+          (length 3.81)
+          (name "+Vs"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "7"
+            (effects
+              (font
+                (size 1.27 1.27)))))
+        (pin power_in line
+          (at -5.08 -10.16 90)
+          (length 3.81)
+          (name "-Vs"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "8"
+            (effects
+              (font
+                (size 1.27 1.27)))))
+        (pin input line
+          (at 2.54 5.08 270)
+          (length 2.54)
+          (name "STBY"
+            (effects
+              (font
+                (size 0.508 0.508))))
+          (number "9"
+            (effects
+              (font
+                (size 1.27 1.27)))))))
+    (symbol "Connector:Conn_01x01_Pin"
+      (pin_names
+        (offset 1.016) hide)
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "J"
+        (at 0 2.54 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Value" "Conn_01x01_Pin"
+        (at 0 -2.54 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Footprint" ""
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "Datasheet" "~"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "ki_locked" ""
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "ki_keywords" "connector"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "ki_description" "Generic connector, single row, 01x01, script generated"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "ki_fp_filters" "Connector*:*_1x??_*"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (symbol "Conn_01x01_Pin_1_1"
+        (polyline
+          (pts
+            (xy 1.27 0)
+            (xy 0.8636 0))
+          (stroke
+            (width 0.1524)
+            (type default))
+          (fill
+            (type none)))
+        (rectangle
+          (start 0.8636 0.127)
+          (end 0 -0.127)
+          (stroke
+            (width 0.1524)
+            (type default))
+          (fill
+            (type outline)))
+        (pin passive line
+          (at 5.08 0 180)
+          (length 3.81)
+          (name "Pin_1"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)))))))
+    (symbol "Device:C"
+      (pin_numbers hide)
+      (pin_names
+        (offset 0.254))
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "C"
+        (at 0.635 2.54 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (justify left)))
+      (property "Value" "C"
+        (at 0.635 -2.54 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (justify left)))
+      (property "Footprint" ""
+        (at 0.9652 -3.81 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "Datasheet" "~"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "ki_keywords" "cap capacitor"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "ki_description" "Unpolarized capacitor"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "ki_fp_filters" "C_*"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (symbol "C_0_1"
+        (polyline
+          (pts
+            (xy -2.032 -0.762)
+            (xy 2.032 -0.762))
+          (stroke
+            (width 0.508)
+            (type default))
+          (fill
+            (type none)))
+        (polyline
+          (pts
+            (xy -2.032 0.762)
+            (xy 2.032 0.762))
+          (stroke
+            (width 0.508)
+            (type default))
+          (fill
+            (type none))))
+      (symbol "C_1_1"
+        (pin passive line
+          (at 0 3.81 270)
+          (length 2.794)
+          (name "~"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)))))
+        (pin passive line
+          (at 0 -3.81 90)
+          (length 2.794)
+          (name "~"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "2"
+            (effects
+              (font
+                (size 1.27 1.27)))))))
+    (symbol "Device:C_Polarized"
+      (pin_numbers hide)
+      (pin_names
+        (offset 0.254))
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "C"
+        (at 0.635 2.54 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (justify left)))
+      (property "Value" "C_Polarized"
+        (at 0.635 -2.54 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (justify left)))
+      (property "Footprint" ""
+        (at 0.9652 -3.81 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "Datasheet" "~"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "ki_keywords" "cap capacitor"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "ki_description" "Polarized capacitor"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "ki_fp_filters" "CP_*"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (symbol "C_Polarized_0_1"
+        (rectangle
+          (start -2.286 0.508)
+          (end 2.286 1.016)
+          (stroke
+            (width 0)
+            (type default))
+          (fill
+            (type none)))
+        (polyline
+          (pts
+            (xy -1.778 2.286)
+            (xy -0.762 2.286))
+          (stroke
+            (width 0)
+            (type default))
+          (fill
+            (type none)))
+        (polyline
+          (pts
+            (xy -1.27 2.794)
+            (xy -1.27 1.778))
+          (stroke
+            (width 0)
+            (type default))
+          (fill
+            (type none)))
+        (rectangle
+          (start 2.286 -0.508)
+          (end -2.286 -1.016)
+          (stroke
+            (width 0)
+            (type default))
+          (fill
+            (type outline))))
+      (symbol "C_Polarized_1_1"
+        (pin passive line
+          (at 0 3.81 270)
+          (length 2.794)
+          (name "~"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)))))
+        (pin passive line
+          (at 0 -3.81 90)
+          (length 2.794)
+          (name "~"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "2"
+            (effects
+              (font
+                (size 1.27 1.27)))))))
+    (symbol "Device:D"
+      (pin_numbers hide)
+      (pin_names
+        (offset 1.016) hide)
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "D"
+        (at 0 2.54 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Value" "D"
+        (at 0 -2.54 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Footprint" ""
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "Datasheet" "~"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "Sim.Device" "D"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "Sim.Pins" "1=K 2=A"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "ki_keywords" "diode"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "ki_description" "Diode"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (symbol "D_0_1"
+        (polyline
+          (pts
+            (xy -1.27 1.27)
+            (xy -1.27 -1.27))
+          (stroke
+            (width 0.254)
+            (type default))
+          (fill
+            (type none)))
+        (polyline
+          (pts
+            (xy 1.27 0)
+            (xy -1.27 0))
+          (stroke
+            (width 0)
+            (type default))
+          (fill
+            (type none)))
+        (polyline
+          (pts
+            (xy 1.27 1.27)
+            (xy 1.27 -1.27)
+            (xy -1.27 0)
+            (xy 1.27 1.27))
+          (stroke
+            (width 0.254)
+            (type default))
+          (fill
+            (type none))))
+      (symbol "D_1_1"
+        (pin passive line
+          (at -3.81 0 0)
+          (length 2.54)
+          (name "K"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)))))
+        (pin passive line
+          (at 3.81 0 180)
+          (length 2.54)
+          (name "A"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "2"
+            (effects
+              (font
+                (size 1.27 1.27)))))))
+    (symbol "Device:NetTie_2"
+      (pin_numbers hide)
+      (pin_names
+        (offset 0) hide)
+      (in_bom no)
+      (on_board yes)
+      (property "Reference" "NT"
+        (at 0 1.27 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Value" "NetTie_2"
+        (at 0 -1.27 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Footprint" ""
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "Datasheet" "~"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "ki_keywords" "net tie short"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "ki_description" "Net tie, 2 pins"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "ki_fp_filters" "Net*Tie*"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (symbol "NetTie_2_0_1"
+        (polyline
+          (pts
+            (xy -1.27 0)
+            (xy 1.27 0))
+          (stroke
+            (width 0.254)
+            (type default))
+          (fill
+            (type none))))
+      (symbol "NetTie_2_1_1"
+        (pin passive line
+          (at -2.54 0 0)
+          (length 2.54)
+          (name "1"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)))))
+        (pin passive line
+          (at 2.54 0 180)
+          (length 2.54)
+          (name "2"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "2"
+            (effects
+              (font
+                (size 1.27 1.27)))))))
+    (symbol "Device:R"
+      (pin_numbers hide)
+      (pin_names
+        (offset 0))
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "R"
+        (at 2.032 0 90)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Value" "R"
+        (at 0 0 90)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Footprint" ""
+        (at -1.778 0 90)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "Datasheet" "~"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "ki_keywords" "R res resistor"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "ki_description" "Resistor"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "ki_fp_filters" "R_*"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (symbol "R_0_1"
+        (rectangle
+          (start -1.016 -2.54)
+          (end 1.016 2.54)
+          (stroke
+            (width 0.254)
+            (type default))
+          (fill
+            (type none))))
+      (symbol "R_1_1"
+        (pin passive line
+          (at 0 3.81 270)
+          (length 1.27)
+          (name "~"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)))))
+        (pin passive line
+          (at 0 -3.81 90)
+          (length 1.27)
+          (name "~"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "2"
+            (effects
+              (font
+                (size 1.27 1.27)))))))
+    (symbol "Mechanical:MountingHole"
+      (pin_names
+        (offset 1.016))
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "H"
+        (at 0 5.08 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Value" "MountingHole"
+        (at 0 3.175 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Footprint" ""
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "Datasheet" "~"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "ki_keywords" "mounting hole"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "ki_description" "Mounting Hole without connection"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "ki_fp_filters" "MountingHole*"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (symbol "MountingHole_0_1"
+        (circle
+          (center 0 0)
+          (radius 1.27)
+          (stroke
+            (width 1.27)
+            (type default))
+          (fill
+            (type none)))))
+    (symbol "power:PWR_FLAG"
+      (power)
+      (pin_numbers hide)
+      (pin_names
+        (offset 0) hide)
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "#FLG"
+        (at 0 1.905 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "Value" "PWR_FLAG"
+        (at 0 3.81 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Footprint" ""
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "Datasheet" "~"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "ki_keywords" "flag power"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (property "ki_description" "Special symbol for telling ERC where power comes from"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)) hide))
+      (symbol "PWR_FLAG_0_0"
+        (pin power_out line
+          (at 0 0 90)
+          (length 0)
+          (name "pwr"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27))))))
+      (symbol "PWR_FLAG_0_1"
+        (polyline
+          (pts
+            (xy 0 0)
+            (xy 0 1.27)
+            (xy -1.016 1.905)
+            (xy 0 2.54)
+            (xy 1.016 1.905)
+            (xy 0 1.27))
+          (stroke
+            (width 0)
+            (type default))
+          (fill
+            (type none))))))
+  (symbol
+    (lib_id "Amplifier_Audio:TDA7294")
+    (at 190.5 127.0 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid 95806d0b-52f8-51ee-9a32-6bbbf21e1d0a)
+    (property "Reference" "U1"
+      (at 193.5 125.73 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "TDA7294V"
+      (at 193.5 128.27 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Package_TO_SOT_THT:TO-220-15_P2.54x2.54mm_StaggerOdd_Lead4.58mm_Vertical"
+      (at 190.5 127.0 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 190.5 127.0 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Note" "Tab = -V. Insulate from heatsink (silpad + shoulder washer)"
+      (at 190.5 127.0 0)
+      (id 4)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid 9003cc62-258a-55bd-ab2f-cad304c7312f))
+    (pin "10"
+      (uuid c4f43d7f-47c5-5569-a419-f2b2fe90cb1e))
+    (pin "11"
+      (uuid ae88c780-32e6-5341-95ce-261ffbf2f753))
+    (pin "12"
+      (uuid f80d777f-fdf6-59bf-b1a9-36350cde7bab))
+    (pin "13"
+      (uuid 6a59c26b-2c83-5cb6-a78a-e7c0741752c2))
+    (pin "14"
+      (uuid 0278ad5f-82f2-56c2-87ea-249ea3d4642b))
+    (pin "15"
+      (uuid 16c4e90d-fe19-5226-a43c-974b9eceea91))
+    (pin "2"
+      (uuid 08a144f3-3979-5c2c-a43f-4ed8208bcfff))
+    (pin "3"
+      (uuid 18659aed-e31b-50ba-8f27-2708b0c132cd))
+    (pin "4"
+      (uuid 0e2de1ee-5a6e-58a3-bb21-dd6e7e760ff7))
+    (pin "5"
+      (uuid 32e71ed9-82ec-5d05-8f41-d64471bf2a7f))
+    (pin "6"
+      (uuid 1f9881d7-82c6-50e1-8830-c86d32f8bc68))
+    (pin "7"
+      (uuid 37ebd4f8-b4f5-562d-aebb-a3ffd05929d1))
+    (pin "8"
+      (uuid 0102f2cd-1387-5f23-ae07-3a9e916b68f1))
+    (pin "9"
+      (uuid 6da5b780-4aa9-5841-96a3-24d08688f5db))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "U1")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 193.04 132.08)
+      (xy 193.04 137.16))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid df113777-6343-52c1-aea2-87f86d11ef9f))
+  (label "SGND"
+    (at 193.04 137.16 270)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid 7f3f2e55-e8da-5e23-b25c-1e8460a5342c))
+  (wire
+    (pts
+      (xy 190.5 119.38)
+      (xy 190.5 114.3))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid fdd3e442-a309-5814-bf27-740610bc405c))
+  (label "MUTE"
+    (at 190.5 114.3 90)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid 65cad2dd-b8e8-5881-9e8a-6653aaf37978))
+  (wire
+    (pts
+      (xy 187.96 116.84)
+      (xy 187.96 111.76))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 8bf2d026-3db9-55e9-aee1-5535ccfae2c2))
+  (label "+V"
+    (at 187.96 111.76 90)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid 81e1b59c-4415-5359-8bb2-ba826b788d64))
+  (wire
+    (pts
+      (xy 200.66 127.0)
+      (xy 205.74 127.0))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 05282d6c-fb26-5aa4-9590-1fa114be7a6c))
+  (label "OUT"
+    (at 205.74 127.0 0)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid 670f1d1d-5b1b-5cb2-87cc-fb9110e26ac2))
+  (wire
+    (pts
+      (xy 187.96 137.16)
+      (xy 187.96 142.24))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 4c4c33b9-d2ff-5711-b0aa-ca8b892138a3))
+  (label "-V"
+    (at 187.96 142.24 270)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid 26f6cd9c-879f-50bf-ad08-0d9587eed493))
+  (wire
+    (pts
+      (xy 180.34 129.54)
+      (xy 175.26 129.54))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 42e0b409-7cae-51b7-837a-7d75be74dc72))
+  (label "IN-"
+    (at 175.26 129.54 180)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid b9dbcbba-0177-53e3-8601-5eb3ae6618f1))
+  (wire
+    (pts
+      (xy 180.34 124.46)
+      (xy 175.26 124.46))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid b8abd8e8-68d5-5bb5-a69e-fd0b18539de5))
+  (label "IN+"
+    (at 175.26 124.46 180)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid 8e6267e5-bf83-5c82-bace-3ae6fdd80793))
+  (wire
+    (pts
+      (xy 190.5 134.62)
+      (xy 190.5 139.7))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 12cb2a1c-3f3c-5d09-b896-d45aff856972))
+  (label "SGND"
+    (at 190.5 139.7 270)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid 804ddf64-788b-5745-ac0e-a7f1de17c361))
+  (wire
+    (pts
+      (xy 195.58 121.92)
+      (xy 195.58 116.84))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 71b08d42-882f-51e0-ab95-38c21e7d9d7c))
+  (label "BOOT"
+    (at 195.58 116.84 90)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid 25cee101-bf33-5c96-abf0-fb56ac966372))
+  (wire
+    (pts
+      (xy 185.42 116.84)
+      (xy 185.42 111.76))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid e3ee1c3d-a274-5d02-ad92-74ce6f5bb5c5))
+  (label "+V"
+    (at 185.42 111.76 90)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid 9f477be7-4ae1-5c07-a787-0353e640c138))
+  (wire
+    (pts
+      (xy 185.42 137.16)
+      (xy 185.42 142.24))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid f3b2e370-9645-5a5f-877c-ba7609ce4ba9))
+  (label "-V"
+    (at 185.42 142.24 270)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid e033b73c-e062-5fcd-bbf9-a2ad2e92a809))
+  (wire
+    (pts
+      (xy 193.04 121.92)
+      (xy 193.04 116.84))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid d269d323-d296-5da8-82a9-224eec3fcddf))
+  (label "STBY"
+    (at 193.04 116.84 90)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid 320e144a-577e-5e23-a60b-22f60babe58e))
+  (symbol
+    (lib_id "Device:R")
+    (at 68.58 127.0 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid da14f89d-8460-5d7d-ac82-04ef5036918a)
+    (property "Reference" "R1"
+      (at 71.58 125.73 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "680"
+      (at 71.58 128.27 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+      (at 68.58 127.0 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 68.58 127.0 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Type" "Metal film 1% 0.6W"
+      (at 68.58 127.0 0)
+      (id 4)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid 95ae64c3-9754-58c0-8b45-4c78a5d661f0))
+    (pin "2"
+      (uuid ec1f07db-ad30-5907-84e0-7a86d5641114))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "R1")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 68.58 123.19)
+      (xy 68.58 120.65))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 852b2393-a764-53f1-895b-294430176c75))
+  (label "IN-"
+    (at 68.58 120.65 90)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid f9b1dd3b-158a-5db4-88f6-ca8d77712560))
+  (wire
+    (pts
+      (xy 68.58 130.81)
+      (xy 68.58 133.35))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 2551493d-e946-547f-a1fd-7a84785bb2c0))
+  (label "FB_AC"
+    (at 68.58 133.35 270)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid 0d33e849-b66b-5ffc-83eb-16a20e6337fd))
+  (symbol
+    (lib_id "Device:R")
+    (at 50.8 127.0 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid 8856f9b1-6b37-564e-b1c3-817dfc2bf9ef)
+    (property "Reference" "R5"
+      (at 53.8 125.73 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "22k"
+      (at 53.8 128.27 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+      (at 50.8 127.0 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 50.8 127.0 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Type" "Metal film 1% 0.6W"
+      (at 50.8 127.0 0)
+      (id 4)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid 41af5c58-9250-512b-a537-8245a66ad1da))
+    (pin "2"
+      (uuid 8cc2ac2e-1bd5-5117-b253-01b72ba95adf))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "R5")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 50.8 123.19)
+      (xy 50.8 120.65))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid efa69596-7e82-58eb-8e90-5a9e9cfe2c80))
+  (label "OUT"
+    (at 50.8 120.65 90)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid 38007a8d-55bc-57da-92bc-e9996d82e79d))
+  (wire
+    (pts
+      (xy 50.8 130.81)
+      (xy 50.8 133.35))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid b143e2cb-6e20-5982-8fd9-379aa6cf28b5))
+  (label "IN-"
+    (at 50.8 133.35 270)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid a9c4448a-33e3-533b-bb73-5031deb1604a))
+  (symbol
+    (lib_id "Device:C_Polarized")
+    (at 86.36 127.0 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid c9eae2dd-d7e0-593e-84ed-f210ef674c9e)
+    (property "Reference" "C3"
+      (at 89.36 125.73 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100uF 50V"
+      (at 89.36 128.27 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm"
+      (at 86.36 127.0 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 86.36 127.0 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Type" "Panasonic FC"
+      (at 86.36 127.0 0)
+      (id 4)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "MPN" "EEU-FC1H101"
+      (at 86.36 127.0 0)
+      (id 5)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid b82c3973-a5b7-5e97-a6e7-6060b8059f39))
+    (pin "2"
+      (uuid 1a967113-1c2a-568d-9915-7b10856a489b))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "C3")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 86.36 123.19)
+      (xy 86.36 120.65))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid f2a9d10a-039b-5527-8c71-7cc6fdd4624e))
+  (label "FB_AC"
+    (at 86.36 120.65 90)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid 19ae307d-a067-5633-b321-bb610fbb6eb6))
+  (wire
+    (pts
+      (xy 86.36 130.81)
+      (xy 86.36 133.35))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 1ca44eb2-2d25-57a5-8d5b-31f80a274cb3))
+  (label "SGND"
+    (at 86.36 133.35 270)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid 8105d9dd-1b93-5790-9c3d-569f78085756))
+  (symbol
+    (lib_id "Device:R")
+    (at 50.8 76.2 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid e1b42d1e-0f24-5e1c-9088-6983f6f95d2b)
+    (property "Reference" "R7"
+      (at 53.8 74.93 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "0R"
+      (at 53.8 77.47 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+      (at 50.8 76.2 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 50.8 76.2 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Type" "0 ohm link (100R option for RF filter)"
+      (at 50.8 76.2 0)
+      (id 4)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid 5e6621cb-d6b5-593f-b906-d376a99c7434))
+    (pin "2"
+      (uuid 3eef7b92-a10a-5f83-a804-6bc7a72c58c7))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "R7")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 50.8 72.39)
+      (xy 50.8 69.85))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 211fbb84-e594-554a-84e6-07e4ece5db57))
+  (label "IN"
+    (at 50.8 69.85 90)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid 99e19c5f-096e-5723-ad40-14e100d4ca71))
+  (wire
+    (pts
+      (xy 50.8 80.01)
+      (xy 50.8 82.55))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 9f5c2eaf-d700-50be-9feb-4b00af6f8982))
+  (label "IN_F"
+    (at 50.8 82.55 270)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid 6ef76ee3-603f-52ad-a37f-a61ef92c41b7))
+  (symbol
+    (lib_id "Device:C")
+    (at 68.58 76.2 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp yes)
+    (fields_autoplaced)
+    (uuid 69b2ddd9-2f93-506c-aca6-5986ec59759e)
+    (property "Reference" "C12"
+      (at 71.58 74.93 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "470pF"
+      (at 71.58 77.47 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_THT:C_Rect_L7.2mm_W3.5mm_P5.00mm_FKS2_FKP2_MKS2_MKP2"
+      (at 68.58 76.2 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 68.58 76.2 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Type" "C0G/film, DO NOT FIT (RF filter option)"
+      (at 68.58 76.2 0)
+      (id 4)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid a4026387-d3a7-561a-9bea-4c3f88467096))
+    (pin "2"
+      (uuid 2a79d609-9f9f-5955-8155-fdc5decbe4de))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "C12")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 68.58 72.39)
+      (xy 68.58 69.85))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 37632ed7-67ed-5a20-9568-0e5b02513358))
+  (label "IN_F"
+    (at 68.58 69.85 90)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid 98fe7c45-0ffd-564a-a4d5-9fe81ee33b11))
+  (wire
+    (pts
+      (xy 68.58 80.01)
+      (xy 68.58 82.55))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 9a0e9d80-26fb-5ac0-b3ee-5e91ace0cc1a))
+  (label "SGND"
+    (at 68.58 82.55 270)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid f6faf82d-776e-5fd4-95df-5aad64fd63cd))
+  (symbol
+    (lib_id "Device:C")
+    (at 86.36 76.2 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid 269e151e-07fd-5587-9eac-322313810f64)
+    (property "Reference" "C2"
+      (at 89.36 74.93 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "1uF 100V"
+      (at 89.36 77.47 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_THT:C_Rect_L18.0mm_W8.0mm_P15.00mm_FKS3_FKP3"
+      (at 86.36 76.2 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 86.36 76.2 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Type" "MKP/MKS film, P15mm"
+      (at 86.36 76.2 0)
+      (id 4)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid dc196977-f90a-55af-a2ef-50b876eadc1f))
+    (pin "2"
+      (uuid d6752dc5-07eb-59d7-8e6a-31f626d5aae3))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "C2")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 86.36 72.39)
+      (xy 86.36 69.85))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid f003e877-2f9c-5608-973f-3d721510aa57))
+  (label "IN_F"
+    (at 86.36 69.85 90)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid 01ed337a-1b32-58f0-acc3-412eeb52ae19))
+  (wire
+    (pts
+      (xy 86.36 80.01)
+      (xy 86.36 82.55))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 68ec5db4-2354-546b-aaec-035e14806f1d))
+  (label "IN+"
+    (at 86.36 82.55 270)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid 60195071-b87e-5b61-aea9-726512cc785e))
+  (symbol
+    (lib_id "Device:R")
+    (at 104.14 76.2 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid 193bbd79-f059-59d7-bf37-bca3630384ef)
+    (property "Reference" "R2"
+      (at 107.14 74.93 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "22k"
+      (at 107.14 77.47 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+      (at 104.14 76.2 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 104.14 76.2 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Type" "Metal film 1% 0.6W"
+      (at 104.14 76.2 0)
+      (id 4)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid 270cda1d-4520-59f4-965b-0c48b08ac27c))
+    (pin "2"
+      (uuid a3a7115c-b3db-5d53-ba2c-e72e45933ac1))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "R2")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 104.14 72.39)
+      (xy 104.14 69.85))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 8f6df9e8-4d07-5f6c-b084-bc597930a413))
+  (label "IN+"
+    (at 104.14 69.85 90)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid c287d5cd-0e40-54d1-862b-3825c5146767))
+  (wire
+    (pts
+      (xy 104.14 80.01)
+      (xy 104.14 82.55))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid c5abc967-4743-5088-b36d-109066eb430d))
+  (label "SGND"
+    (at 104.14 82.55 270)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid 943d2cf1-b45b-54b5-8355-6c7d9de45fbb))
+  (symbol
+    (lib_id "Device:C_Polarized")
+    (at 104.14 127.0 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid c192de8f-1882-5611-9fde-49f8496b78e6)
+    (property "Reference" "C4"
+      (at 107.14 125.73 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100uF 50V"
+      (at 107.14 128.27 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm"
+      (at 104.14 127.0 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 104.14 127.0 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Type" "Panasonic FC"
+      (at 104.14 127.0 0)
+      (id 4)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "MPN" "EEU-FC1H101"
+      (at 104.14 127.0 0)
+      (id 5)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Note" "+ to pin 6 (BOOT)"
+      (at 104.14 127.0 0)
+      (id 6)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid 64866d89-729d-53a4-8abd-7128a4e9a88c))
+    (pin "2"
+      (uuid 66bafe0a-c4ba-525d-8d78-4d370793c55e))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "C4")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 104.14 123.19)
+      (xy 104.14 120.65))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 2b08a5cd-4c8e-5d51-bddd-097174827ca7))
+  (label "BOOT"
+    (at 104.14 120.65 90)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid 9ac8b0e2-7991-5bd4-b2cc-c828057806e0))
+  (wire
+    (pts
+      (xy 104.14 130.81)
+      (xy 104.14 133.35))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 75f587b6-5853-5163-9e63-6c4162afbc30))
+  (label "OUT"
+    (at 104.14 133.35 270)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid 4e610a7a-5828-510b-a295-724fdc0bff89))
+  (symbol
+    (lib_id "Device:R")
+    (at 271.78 76.2 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid 72ac2031-57b7-5b90-8770-b9f0ced500c6)
+    (property "Reference" "R4"
+      (at 274.78 74.93 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "10k"
+      (at 274.78 77.47 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+      (at 271.78 76.2 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 271.78 76.2 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Type" "Metal film 1% 0.6W"
+      (at 271.78 76.2 0)
+      (id 4)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid fecfe794-cd53-5f5e-b615-5b5f9855638d))
+    (pin "2"
+      (uuid 65ecf50a-5b99-5ff4-b02d-7f582cc5f79f))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "R4")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 271.78 72.39)
+      (xy 271.78 69.85))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 4eb0cff6-9102-582d-b90c-79113451565e))
+  (label "MUTE_IN"
+    (at 271.78 69.85 90)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid 2ab92cc1-72cf-5d11-a60b-636d4a055cdb))
+  (wire
+    (pts
+      (xy 271.78 80.01)
+      (xy 271.78 82.55))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 59836bd4-d79d-5074-95f2-899a6820e8a5))
+  (label "MUTE_N1"
+    (at 271.78 82.55 270)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid f9f55cfd-3d3d-583c-b648-181fa64a3012))
+  (symbol
+    (lib_id "Device:R")
+    (at 289.55999999999995 76.2 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid 39897491-5b92-57a6-b979-b2a57c059736)
+    (property "Reference" "R6"
+      (at 292.55999999999995 74.93 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "33k"
+      (at 292.55999999999995 77.47 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+      (at 289.55999999999995 76.2 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 289.55999999999995 76.2 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Type" "Metal film 1% 0.6W"
+      (at 289.55999999999995 76.2 0)
+      (id 4)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid f0cd92a3-79da-51d2-b086-27dcc4d103fc))
+    (pin "2"
+      (uuid f4695890-eda9-5277-b5aa-0cd5301e5e8b))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "R6")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 289.56 72.39)
+      (xy 289.56 69.85))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid ab860736-731b-547d-b8fa-8a7a846ba7ad))
+  (label "MUTE_N1"
+    (at 289.56 69.85 90)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid 28308398-74a5-50cc-976b-d9b47fde566e))
+  (wire
+    (pts
+      (xy 289.56 80.01)
+      (xy 289.56 82.55))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 419e624a-e9a4-5ea8-b877-0bc37c4940be))
+  (label "MUTE"
+    (at 289.56 82.55 270)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid 648d8fb9-2c66-5dc4-b421-8570f898d709))
+  (symbol
+    (lib_id "Device:D")
+    (at 280.66999999999996 96.52 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid b4ad2255-e9ad-5ccc-8752-e7d4e5a68fb1)
+    (property "Reference" "D1"
+      (at 283.66999999999996 95.25 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "1N4148"
+      (at 283.66999999999996 97.78999999999999 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+      (at 280.66999999999996 96.52 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 280.66999999999996 96.52 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid 00bd8dae-30e3-5294-a6dd-4a03a64520bc))
+    (pin "2"
+      (uuid 7f9b0876-b14a-53c5-8fa5-b0bc680ee833))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "D1")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 276.86 96.52)
+      (xy 274.32 96.52))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 9fdf966c-6c76-5fe6-9e4c-bda4cfbd6e7a))
+  (label "MUTE_N1"
+    (at 274.32 96.52 180)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid bb6039e3-9d78-5572-8b5c-a512d0357b41))
+  (wire
+    (pts
+      (xy 284.48 96.52)
+      (xy 287.02 96.52))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 7a0e6547-1a84-5254-82b8-6502337b8e09))
+  (label "MUTE"
+    (at 287.02 96.52 0)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid dd3f5dd2-049e-591c-a007-f0580610f113))
+  (symbol
+    (lib_id "Device:C_Polarized")
+    (at 307.34 76.2 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid 7b4496d1-4720-5286-b17e-6f902f952392)
+    (property "Reference" "C1"
+      (at 310.34 74.93 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "10uF 50V"
+      (at 310.34 77.47 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_THT:CP_Radial_D5.0mm_P2.00mm"
+      (at 307.34 76.2 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 307.34 76.2 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Type" "Panasonic FC"
+      (at 307.34 76.2 0)
+      (id 4)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "MPN" "EEU-FC1H100L"
+      (at 307.34 76.2 0)
+      (id 5)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid 19fde284-7633-57cb-9f64-d33500a2d4e7))
+    (pin "2"
+      (uuid 9334e785-e1b6-5ef4-ab72-9fdaf025db56))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "C1")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 307.34 72.39)
+      (xy 307.34 69.85))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid df6c0631-d34a-54b5-bf57-323cb1965cb5))
+  (label "MUTE"
+    (at 307.34 69.85 90)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid 2c692bad-597e-5f15-82a3-4f4a47796f4b))
+  (wire
+    (pts
+      (xy 307.34 80.01)
+      (xy 307.34 82.55))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid e1883fd2-7ca0-5ea6-9c2f-74e4cf088cb8))
+  (label "SGND"
+    (at 307.34 82.55 270)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid 56255d51-b2c3-5b3c-a449-239c79e89451))
+  (symbol
+    (lib_id "Device:R")
+    (at 325.12 76.2 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid 3df6b150-652a-57d7-aab6-0eaed7d99481)
+    (property "Reference" "R3"
+      (at 328.12 74.93 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "22k"
+      (at 328.12 77.47 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+      (at 325.12 76.2 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 325.12 76.2 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Type" "Metal film 1% 0.6W"
+      (at 325.12 76.2 0)
+      (id 4)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid a9ce01d7-56f8-5a84-853c-f0a6e8e268a0))
+    (pin "2"
+      (uuid 2b0e5cfa-304b-5563-9752-4ad56cd5f878))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "R3")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 325.12 72.39)
+      (xy 325.12 69.85))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid a07a399d-104e-50f3-bd7d-10a3ede76892))
+  (label "MUTE_IN"
+    (at 325.12 69.85 90)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid 8822a29c-fa6c-55f1-83a9-d70115095953))
+  (wire
+    (pts
+      (xy 325.12 80.01)
+      (xy 325.12 82.55))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 78314a16-740a-5d8b-986d-be098ca5461c))
+  (label "STBY"
+    (at 325.12 82.55 270)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid 1c1619f3-ea2e-5926-b372-77e983cc9057))
+  (symbol
+    (lib_id "Device:C_Polarized")
+    (at 342.9 76.2 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid c103e1e4-1f32-5402-a8fd-346834eb0f7b)
+    (property "Reference" "C10"
+      (at 345.9 74.93 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "10uF 50V"
+      (at 345.9 77.47 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_THT:CP_Radial_D5.0mm_P2.00mm"
+      (at 342.9 76.2 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 342.9 76.2 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Type" "Panasonic FC"
+      (at 342.9 76.2 0)
+      (id 4)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "MPN" "EEU-FC1H100L"
+      (at 342.9 76.2 0)
+      (id 5)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid 67052e72-3112-56c7-8a8e-5d12790859a9))
+    (pin "2"
+      (uuid 12d301e9-8736-51b3-9722-9e5818bd38ad))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "C10")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 342.9 72.39)
+      (xy 342.9 69.85))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 8d18dbb5-36fd-5b6c-8111-39de005bddaa))
+  (label "STBY"
+    (at 342.9 69.85 90)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid 46ae1f3b-42aa-5790-b754-33c179e46cce))
+  (wire
+    (pts
+      (xy 342.9 80.01)
+      (xy 342.9 82.55))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid a5eeb728-d475-5e07-b6cf-024e6632c378))
+  (label "SGND"
+    (at 342.9 82.55 270)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid b8c33ca8-7210-5b3d-8032-1f67e0059978))
+  (symbol
+    (lib_id "Device:C")
+    (at 271.78 132.08 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid 56c90ac9-e7b3-5d1c-9a9b-f2160fd78244)
+    (property "Reference" "C5"
+      (at 274.78 130.81 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100nF 100V"
+      (at 274.78 133.35000000000002 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_THT:C_Rect_L7.2mm_W3.5mm_P5.00mm_FKS2_FKP2_MKS2_MKP2"
+      (at 271.78 132.08 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 271.78 132.08 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Type" "MKS/MKP film"
+      (at 271.78 132.08 0)
+      (id 4)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid 9475eca7-8a26-51ec-9dc7-1bce5f96b463))
+    (pin "2"
+      (uuid 8d870663-575f-5576-8564-e8a133a749d0))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "C5")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 271.78 128.27)
+      (xy 271.78 125.73))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 2ad0550d-71e6-57d6-9294-80ebe19c5550))
+  (label "+V"
+    (at 271.78 125.73 90)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid 6caa3ab4-8c39-5832-9802-731a2eb77282))
+  (wire
+    (pts
+      (xy 271.78 135.89)
+      (xy 271.78 138.43))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 5a9fa42a-d258-5b2f-97d1-ac996a34d927))
+  (label "PGND"
+    (at 271.78 138.43 270)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid 47e51fff-fad8-528d-bef0-4b153efecee3))
+  (symbol
+    (lib_id "Device:C")
+    (at 289.55999999999995 132.08 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid 060b0974-4935-5752-b5a7-61f822be7308)
+    (property "Reference" "C9"
+      (at 292.55999999999995 130.81 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "10uF 100V"
+      (at 292.55999999999995 133.35000000000002 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_THT:C_Rect_L31.5mm_W13.0mm_P27.50mm_MKS4"
+      (at 289.55999999999995 132.08 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 289.55999999999995 132.08 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Type" "MKS4 film (optional, as original)"
+      (at 289.55999999999995 132.08 0)
+      (id 4)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid ecafdc6d-2f7d-5381-bbec-b61571b42921))
+    (pin "2"
+      (uuid 372f161c-999d-56e6-8586-fa9902334446))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "C9")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 289.56 128.27)
+      (xy 289.56 125.73))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 1e8093a1-297c-5452-b441-74bcc0e44ef0))
+  (label "+V"
+    (at 289.56 125.73 90)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid 139a170c-5798-5b64-9dd8-f47cc4be46f2))
+  (wire
+    (pts
+      (xy 289.56 135.89)
+      (xy 289.56 138.43))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 5da99fd3-342f-56f6-b24e-9c180e699850))
+  (label "PGND"
+    (at 289.56 138.43 270)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid 3a39d9d0-104c-575e-8fc0-a004cd67552d))
+  (symbol
+    (lib_id "Device:C_Polarized")
+    (at 307.34 132.08 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid 39a08257-3e58-53e7-96f3-0fd2a9c89df8)
+    (property "Reference" "C7"
+      (at 310.34 130.81 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "2200uF 50V"
+      (at 310.34 133.35000000000002 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_THT:CP_Radial_D18.0mm_P7.50mm"
+      (at 307.34 132.08 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 307.34 132.08 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Type" "Panasonic FC"
+      (at 307.34 132.08 0)
+      (id 4)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "MPN" "EEU-FC1H222"
+      (at 307.34 132.08 0)
+      (id 5)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid c28660c6-caa8-5174-b015-370b39167929))
+    (pin "2"
+      (uuid d0b3ac6c-2284-54c9-ac2f-bf3c91ca8979))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "C7")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 307.34 128.27)
+      (xy 307.34 125.73))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid f3311208-6b37-5fe5-94d9-16f721f125fa))
+  (label "+V"
+    (at 307.34 125.73 90)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid 25bcc99a-13f7-56a0-b6f5-7aa4b96bb0fe))
+  (wire
+    (pts
+      (xy 307.34 135.89)
+      (xy 307.34 138.43))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 09b61ab5-4ef2-54a8-ae39-21e7a5e81bf1))
+  (label "PGND"
+    (at 307.34 138.43 270)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid 0c43bbf8-5a56-51c1-a0a9-9ece5a4498af))
+  (symbol
+    (lib_id "Device:C_Polarized")
+    (at 325.12 132.08 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid 7c77c104-a4dc-5358-954a-47cc3a5839e8)
+    (property "Reference" "C13"
+      (at 328.12 130.81 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "2200uF 50V"
+      (at 328.12 133.35000000000002 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_THT:CP_Radial_D18.0mm_P7.50mm"
+      (at 325.12 132.08 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 325.12 132.08 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Type" "Panasonic FC"
+      (at 325.12 132.08 0)
+      (id 4)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "MPN" "EEU-FC1H222"
+      (at 325.12 132.08 0)
+      (id 5)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid 40162b9f-eff3-5fa3-afeb-dbaa94eba970))
+    (pin "2"
+      (uuid 1aa12221-0edc-5706-94cc-28af2407adf0))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "C13")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 325.12 128.27)
+      (xy 325.12 125.73))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid aa6bacfa-dc1c-57de-9f96-061ff5abed0c))
+  (label "+V"
+    (at 325.12 125.73 90)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid 619885ac-486b-5e65-b9db-baa57befd89f))
+  (wire
+    (pts
+      (xy 325.12 135.89)
+      (xy 325.12 138.43))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 2484de33-70d6-5b38-83d9-e5f0d03bd108))
+  (label "PGND"
+    (at 325.12 138.43 270)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid dabcf7a3-e75e-501f-832c-127599c797ee))
+  (symbol
+    (lib_id "Device:C")
+    (at 271.78 172.72 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid 71088357-73ac-54e2-8742-1b46baa6cff2)
+    (property "Reference" "C6"
+      (at 274.78 171.45 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100nF 100V"
+      (at 274.78 173.99 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_THT:C_Rect_L7.2mm_W3.5mm_P5.00mm_FKS2_FKP2_MKS2_MKP2"
+      (at 271.78 172.72 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 271.78 172.72 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Type" "MKS/MKP film"
+      (at 271.78 172.72 0)
+      (id 4)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid c7ad92bd-9849-5d20-adf8-d4fbb9ea66a0))
+    (pin "2"
+      (uuid d71055a4-da92-5efa-81c2-a1b5323ca2f6))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "C6")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 271.78 168.91)
+      (xy 271.78 166.37))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 2bc05475-3026-5f6d-b9fe-9ee85d9250ed))
+  (label "PGND"
+    (at 271.78 166.37 90)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid c97a633f-f468-50da-b82b-29bb518070d2))
+  (wire
+    (pts
+      (xy 271.78 176.53)
+      (xy 271.78 179.07))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid c9319ff1-541e-5b2b-a0bb-57f10e4386da))
+  (label "-V"
+    (at 271.78 179.07 270)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid 77bfcc29-7f23-5bdd-961a-94c94c0518ed))
+  (symbol
+    (lib_id "Device:C")
+    (at 289.55999999999995 172.72 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid b7f1e7ee-90eb-5183-a72f-7266e7070066)
+    (property "Reference" "C11"
+      (at 292.55999999999995 171.45 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "10uF 100V"
+      (at 292.55999999999995 173.99 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_THT:C_Rect_L31.5mm_W13.0mm_P27.50mm_MKS4"
+      (at 289.55999999999995 172.72 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 289.55999999999995 172.72 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Type" "MKS4 film (optional, as original)"
+      (at 289.55999999999995 172.72 0)
+      (id 4)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid ec3d8505-6831-5e71-bcc0-d3f0f8899d33))
+    (pin "2"
+      (uuid 6832ce9a-d092-55fb-a020-4942a577d7f3))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "C11")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 289.56 168.91)
+      (xy 289.56 166.37))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 7398a6c9-dab2-51e9-baa0-6d94b562ff9a))
+  (label "PGND"
+    (at 289.56 166.37 90)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid 8df06793-aa23-5c79-95da-a78f4a994da5))
+  (wire
+    (pts
+      (xy 289.56 176.53)
+      (xy 289.56 179.07))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 76b82a8e-587a-5d0e-9c82-1be797e0d22f))
+  (label "-V"
+    (at 289.56 179.07 270)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid 775dcecf-5812-570d-8026-07666a1dc5ea))
+  (symbol
+    (lib_id "Device:C_Polarized")
+    (at 307.34 172.72 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid 7407105c-d800-5d00-8a3d-9fa8a42d0548)
+    (property "Reference" "C8"
+      (at 310.34 171.45 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "2200uF 50V"
+      (at 310.34 173.99 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_THT:CP_Radial_D18.0mm_P7.50mm"
+      (at 307.34 172.72 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 307.34 172.72 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Type" "Panasonic FC"
+      (at 307.34 172.72 0)
+      (id 4)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "MPN" "EEU-FC1H222"
+      (at 307.34 172.72 0)
+      (id 5)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid 32362174-a046-532e-b8fa-5ac8c0f0bf67))
+    (pin "2"
+      (uuid 193a1830-c203-5d64-8461-09253994240f))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "C8")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 307.34 168.91)
+      (xy 307.34 166.37))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 8b0d9bbe-4c18-5e45-b8f5-d60f86a97e1a))
+  (label "PGND"
+    (at 307.34 166.37 90)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid de40e77b-bcb6-5d27-bd0e-81cb7d952bd5))
+  (wire
+    (pts
+      (xy 307.34 176.53)
+      (xy 307.34 179.07))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid d0c581c8-39fa-57c6-85c7-d69d8d5106ae))
+  (label "-V"
+    (at 307.34 179.07 270)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid 1a144f60-0d99-5474-9ad9-cbfc95cb1d0b))
+  (symbol
+    (lib_id "Device:C_Polarized")
+    (at 325.12 172.72 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid 94959e87-bd34-58fc-9934-b2a8d8c55d41)
+    (property "Reference" "C14"
+      (at 328.12 171.45 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "2200uF 50V"
+      (at 328.12 173.99 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_THT:CP_Radial_D18.0mm_P7.50mm"
+      (at 325.12 172.72 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 325.12 172.72 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Type" "Panasonic FC"
+      (at 325.12 172.72 0)
+      (id 4)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "MPN" "EEU-FC1H222"
+      (at 325.12 172.72 0)
+      (id 5)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid bcb99119-bcc1-5bd2-9ff5-fb106ce5b55a))
+    (pin "2"
+      (uuid d6bfe17e-b9d3-5a68-a14c-ae65a49e8770))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "C14")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 325.12 168.91)
+      (xy 325.12 166.37))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 1bc56ba5-4f5b-5165-a8a7-1041dacdb618))
+  (label "PGND"
+    (at 325.12 166.37 90)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid c675da28-6e79-51d3-8a77-d2a251854f64))
+  (wire
+    (pts
+      (xy 325.12 176.53)
+      (xy 325.12 179.07))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid f24fc392-9cf9-579b-bfaf-d271a7576a5e))
+  (label "-V"
+    (at 325.12 179.07 270)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid 1be36adf-f610-5ec8-b47a-05cd0bd3d5ea))
+  (symbol
+    (lib_id "Device:NetTie_2")
+    (at 190.5 182.88 0)
+    (unit 1)
+    (in_bom no)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid 6f944adc-0104-5781-9433-3057c46e322d)
+    (property "Reference" "NT1"
+      (at 193.5 181.60999999999999 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "STAR"
+      (at 193.5 184.15 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "NetTie:NetTie-2_SMD_Pad2.0mm"
+      (at 190.5 182.88 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 190.5 182.88 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid 5af6967d-5faa-59b4-b144-78143dd89b10))
+    (pin "2"
+      (uuid 748ff395-0b4a-5d44-b5c5-83517a86468a))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "NT1")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 187.96 182.88)
+      (xy 182.88 182.88))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 09870cb5-95d1-55f1-b56d-318d277ebda3))
+  (label "SGND"
+    (at 182.88 182.88 180)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid b5b33622-c6aa-5330-ac6e-c8b7b7a995c9))
+  (wire
+    (pts
+      (xy 193.04 182.88)
+      (xy 198.12 182.88))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 3ea6ebde-af90-5bf7-825c-0ea5dca9ba4b))
+  (label "PGND"
+    (at 198.12 182.88 0)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid 460d0e5c-36ba-5d22-85ac-1549563acaef))
+  (symbol
+    (lib_id "Connector:Conn_01x01_Pin")
+    (at 45.72 175.26 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid a565ae25-9a18-58ce-8770-994fe8d4ff3c)
+    (property "Reference" "J1"
+      (at 48.72 173.98999999999998 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "+V in"
+      (at 48.72 176.53 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Connector_Wire:SolderWire-1.5sqmm_1x01_D1.7mm_OD3.9mm"
+      (at 45.72 175.26 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 45.72 175.26 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid dc1a43cd-ca70-591d-b127-043bb8247500))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "J1")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 50.8 175.26)
+      (xy 53.34 175.26))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid e0a52076-1e6d-5807-907c-064d5c474c7b))
+  (label "+V"
+    (at 53.34 175.26 0)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid eb94a8af-4cef-5785-b11c-9f62d5490c10))
+  (symbol
+    (lib_id "Connector:Conn_01x01_Pin")
+    (at 45.72 182.88 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid a0555233-f753-5d9f-9b98-ce686e4cf0c3)
+    (property "Reference" "J2"
+      (at 48.72 181.60999999999999 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "0V in"
+      (at 48.72 184.15 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Connector_Wire:SolderWire-1.5sqmm_1x01_D1.7mm_OD3.9mm"
+      (at 45.72 182.88 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 45.72 182.88 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid b2f0dfe5-3f87-56a4-9898-60605dd263b4))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "J2")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 50.8 182.88)
+      (xy 53.34 182.88))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 7e26a980-2b77-5f07-a9cc-5322e920a992))
+  (label "PGND"
+    (at 53.34 182.88 0)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid ee0c9e55-f124-5476-8fc0-b5b172d1a86e))
+  (symbol
+    (lib_id "Connector:Conn_01x01_Pin")
+    (at 45.72 190.5 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid 4a342bfe-fdc2-520a-a0c2-14db60dc66d5)
+    (property "Reference" "J3"
+      (at 48.72 189.23 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "-V in"
+      (at 48.72 191.77 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Connector_Wire:SolderWire-1.5sqmm_1x01_D1.7mm_OD3.9mm"
+      (at 45.72 190.5 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 45.72 190.5 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid e34f4d2b-75cd-5301-95ca-1310dd1854e1))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "J3")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 50.8 190.5)
+      (xy 53.34 190.5))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 3213a387-bde3-5fe1-ad4b-ecf329fdec3e))
+  (label "-V"
+    (at 53.34 190.5 0)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid 3c770f20-294f-569f-bf9c-dc67f6831daf))
+  (symbol
+    (lib_id "Connector:Conn_01x01_Pin")
+    (at 45.72 198.12 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid cdf3b016-8010-5d59-a716-6059964925c2)
+    (property "Reference" "J4"
+      (at 48.72 196.85 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "SPK+"
+      (at 48.72 199.39000000000001 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Connector_Wire:SolderWire-1.5sqmm_1x01_D1.7mm_OD3.9mm"
+      (at 45.72 198.12 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 45.72 198.12 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid 42aae588-c696-53b5-95a5-b5f24f9d05ff))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "J4")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 50.8 198.12)
+      (xy 53.34 198.12))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 309f6ce1-7bbd-5943-84c6-742e3ef0031d))
+  (label "OUT"
+    (at 53.34 198.12 0)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid 49e00fca-b03b-51cd-9bd5-3d718ece6ac7))
+  (symbol
+    (lib_id "Connector:Conn_01x01_Pin")
+    (at 45.72 205.73999999999998 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid f3fa1513-64bd-519b-8c08-2c97bafcf7f4)
+    (property "Reference" "J5"
+      (at 48.72 204.46999999999997 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "SPK-"
+      (at 48.72 207.01 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Connector_Wire:SolderWire-1.5sqmm_1x01_D1.7mm_OD3.9mm"
+      (at 45.72 205.73999999999998 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 45.72 205.73999999999998 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid c112eae8-9940-5009-b849-31ee5446e0a3))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "J5")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 50.8 205.74)
+      (xy 53.34 205.74))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 94dc2f03-0258-5c4a-802a-a3ee3e9d5e65))
+  (label "PGND"
+    (at 53.34 205.74 0)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid 5dc847ff-7119-5fed-8118-b06dea2595d3))
+  (symbol
+    (lib_id "Connector:Conn_01x01_Pin")
+    (at 45.72 213.35999999999999 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid fbdc28b8-81e2-50ff-96c0-5265aaf05b2f)
+    (property "Reference" "J6"
+      (at 48.72 212.08999999999997 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "Audio in"
+      (at 48.72 214.63 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Connector_Wire:SolderWire-0.5sqmm_1x01_D0.9mm_OD2.3mm"
+      (at 45.72 213.35999999999999 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 45.72 213.35999999999999 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid 62e8de7b-335a-532c-88bd-86efc9d4ba7d))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "J6")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 50.8 213.36)
+      (xy 53.34 213.36))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 02ad96fe-1bcf-5638-9b58-3b09b1fd35cb))
+  (label "IN"
+    (at 53.34 213.36 0)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid 2a53f9e4-4b3c-5af0-81fe-f3a46304cb69))
+  (symbol
+    (lib_id "Connector:Conn_01x01_Pin")
+    (at 45.72 220.98 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid b505c73e-7f2c-5ec5-96e6-68cd895602d9)
+    (property "Reference" "J7"
+      (at 48.72 219.70999999999998 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "Audio gnd"
+      (at 48.72 222.25 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Connector_Wire:SolderWire-0.5sqmm_1x01_D0.9mm_OD2.3mm"
+      (at 45.72 220.98 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 45.72 220.98 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid 096d5de4-e19d-5506-97ac-26095bfc5959))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "J7")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 50.8 220.98)
+      (xy 53.34 220.98))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid f55be300-90f7-5ff0-b7c9-0d1257aa91a2))
+  (label "SGND"
+    (at 53.34 220.98 0)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid e804481c-bc0f-5374-840f-277e71a59b70))
+  (symbol
+    (lib_id "Connector:Conn_01x01_Pin")
+    (at 45.72 228.6 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid 0aff6d7f-1113-5f47-860b-d92d713c0cdc)
+    (property "Reference" "J8"
+      (at 48.72 227.32999999999998 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "Mute (+V = play)"
+      (at 48.72 229.87 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Connector_Wire:SolderWire-0.5sqmm_1x01_D0.9mm_OD2.3mm"
+      (at 45.72 228.6 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 45.72 228.6 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid f13266da-d905-5a6d-9095-a9df5944c9db))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "J8")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 50.8 228.6)
+      (xy 53.34 228.6))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid eb4104e0-e231-5432-9d05-6bda1e735b84))
+  (label "MUTE_IN"
+    (at 53.34 228.6 0)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left bottom))
+    (uuid 39f4200e-7a65-5532-b8c3-3d75e120c599))
+  (symbol
+    (lib_id "Mechanical:MountingHole")
+    (at 271.78 213.36 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid f93103f9-0b39-5325-b06c-0de10c013624)
+    (property "Reference" "H1"
+      (at 274.78 212.09 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "Bracket M3"
+      (at 274.78 214.63000000000002 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+      (at 271.78 213.36 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 271.78 213.36 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "H1")
+          (unit 1)))))
+  (symbol
+    (lib_id "Mechanical:MountingHole")
+    (at 287.02 213.36 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid 0ac42a70-0097-5ad1-9916-fc0e45ebc6ed)
+    (property "Reference" "H2"
+      (at 290.02 212.09 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "Bracket M3"
+      (at 290.02 214.63000000000002 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+      (at 287.02 213.36 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 287.02 213.36 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "H2")
+          (unit 1)))))
+  (symbol
+    (lib_id "Mechanical:MountingHole")
+    (at 302.26 213.36 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid dec537e6-8871-5a15-ba10-33ea2d9ad761)
+    (property "Reference" "H3"
+      (at 305.26 212.09 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "Standoff M3"
+      (at 305.26 214.63000000000002 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+      (at 302.26 213.36 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 302.26 213.36 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "H3")
+          (unit 1)))))
+  (symbol
+    (lib_id "Mechanical:MountingHole")
+    (at 317.5 213.36 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid 7243fa0a-1d1f-52f0-bc70-03ac4e49376f)
+    (property "Reference" "H4"
+      (at 320.5 212.09 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "Standoff M3"
+      (at 320.5 214.63000000000002 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+      (at 317.5 213.36 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 317.5 213.36 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "H4")
+          (unit 1)))))
+  (symbol
+    (lib_id "power:PWR_FLAG")
+    (at 165.1 213.36 0)
+    (unit 1)
+    (in_bom no)
+    (on_board no)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid cda66414-18cf-55de-820c-d8cd190d719c)
+    (property "Reference" "#FLG01"
+      (at 168.1 212.09 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Value" "PWR_FLAG"
+      (at 168.1 214.63000000000002 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" ""
+      (at 165.1 213.36 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 165.1 213.36 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid 1e6c24fa-a999-58fa-b87b-6157a60a438e))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "#FLG01")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 165.1 213.36)
+      (xy 165.1 215.9))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid a8ea4398-b1ff-52a9-92cb-9eaffecd8063))
+  (label "+V"
+    (at 165.1 215.9 270)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid 21c9acdf-ef3c-515b-977a-90029b28fd3a))
+  (symbol
+    (lib_id "power:PWR_FLAG")
+    (at 180.34 213.36 0)
+    (unit 1)
+    (in_bom no)
+    (on_board no)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid 362f37a2-b71b-5c80-a385-75d5d1d19164)
+    (property "Reference" "#FLG02"
+      (at 183.34 212.09 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Value" "PWR_FLAG"
+      (at 183.34 214.63000000000002 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" ""
+      (at 180.34 213.36 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 180.34 213.36 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid 1be65b5a-62c3-56d2-a2a4-8b7551d7b5bc))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "#FLG02")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 180.34 213.36)
+      (xy 180.34 215.9))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid f956d121-1cc6-5a17-b383-621ab0597666))
+  (label "-V"
+    (at 180.34 215.9 270)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid 2bd3b763-5455-5d82-8a3d-3850b360fb5f))
+  (symbol
+    (lib_id "power:PWR_FLAG")
+    (at 195.57999999999998 213.36 0)
+    (unit 1)
+    (in_bom no)
+    (on_board no)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid 702d42b8-724b-5b25-8aa3-0ae487987898)
+    (property "Reference" "#FLG03"
+      (at 198.57999999999998 212.09 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Value" "PWR_FLAG"
+      (at 198.57999999999998 214.63000000000002 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" ""
+      (at 195.57999999999998 213.36 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 195.57999999999998 213.36 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid 3bef443c-8c0f-57a7-b542-a4d1f4282ae4))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "#FLG03")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 195.58 213.36)
+      (xy 195.58 215.9))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid b3d23fe9-6366-5475-9eb1-e8f810eaf89e))
+  (label "PGND"
+    (at 195.58 215.9 270)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid 2f1e14ab-91ac-56db-9b19-1ff6ca306f6e))
+  (symbol
+    (lib_id "power:PWR_FLAG")
+    (at 210.82 213.36 0)
+    (unit 1)
+    (in_bom no)
+    (on_board no)
+    (dnp no)
+    (fields_autoplaced)
+    (uuid c5d06861-8acd-5444-894c-17ec93637938)
+    (property "Reference" "#FLG04"
+      (at 213.82 212.09 0)
+      (id 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Value" "PWR_FLAG"
+      (at 213.82 214.63000000000002 0)
+      (id 1)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" ""
+      (at 210.82 213.36 0)
+      (id 2)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (property "Datasheet" ""
+      (at 210.82 213.36 0)
+      (id 3)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left) hide))
+    (pin "1"
+      (uuid dd04665d-268f-5b91-84da-8b6857b8c1d7))
+    (instances
+      (project "tda7294_mono"
+        (path "/7a7a4e8c-0dad-5eb1-a0f1-8c749594002e"
+          (reference "#FLG04")
+          (unit 1)))))
+  (wire
+    (pts
+      (xy 210.82 213.36)
+      (xy 210.82 215.9))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid 30cf6361-96c0-582f-8d7d-f40506457be0))
+  (label "SGND"
+    (at 210.82 215.9 270)
+    (fields_autoplaced)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify right bottom))
+    (uuid 9b0f0e3f-6910-513e-964d-96ef8aadcb52))
+  (text "INPUT  (RF filter R7/C12 optional: R7 = 0R link, C12 not fitted)"
+    (at 45.72 58.42 0)
+    (effects
+      (font
+        (size 1.778 1.778))
+      (justify left bottom))
+    (uuid 4c39956c-4b5f-5a8b-81b3-7d79ba2eaee4))
+  (text "FEEDBACK  gain = 1 + R5/R1 = 33.4x (30.5 dB)   +  BOOTSTRAP"
+    (at 45.72 109.22 0)
+    (effects
+      (font
+        (size 1.778 1.778))
+      (justify left bottom))
+    (uuid 00ebfec8-a11a-5366-a7c1-dc47aa42600a))
+  (text "MUTE / STANDBY  (J8 to +V = play, to SGND = standby)"
+    (at 266.7 58.42 0)
+    (effects
+      (font
+        (size 1.778 1.778))
+      (justify left bottom))
+    (uuid 26f1f2a6-a514-5f93-94d1-5b5d58ceb00c))
+  (text "+V RAIL DECOUPLING  (local; main reservoir sits in the PSU)"
+    (at 266.7 114.3 0)
+    (effects
+      (font
+        (size 1.778 1.778))
+      (justify left bottom))
+    (uuid b0d54178-a218-5d31-9d1b-850e2e7e75e0))
+  (text "-V RAIL DECOUPLING"
+    (at 266.7 154.94 0)
+    (effects
+      (font
+        (size 1.778 1.778))
+      (justify left bottom))
+    (uuid 35cdfd10-b461-574e-b708-30b844f5ff09))
+  (text "WIRE PADS"
+    (at 40.64 165.1 0)
+    (effects
+      (font
+        (size 1.778 1.778))
+      (justify left bottom))
+    (uuid b4c4d394-b96f-5bb6-b34e-d909e7cc6485))
+  (text "STAR POINT: the only SGND-PGND joint (NT1 on the PCB)"
+    (at 165.1 172.72 0)
+    (effects
+      (font
+        (size 1.778 1.778))
+      (justify left bottom))
+    (uuid 06c29e55-90bb-567c-9c0e-9796a1412428))
+  (text "TDA7294 MONO MODULE  -  Currently Amped  -  4-layer, 2 oz Cu, ENIG"
+    (at 165.1 66.04 0)
+    (effects
+      (font
+        (size 1.778 1.778))
+      (justify left bottom))
+    (uuid 8ee10035-dced-52f3-9038-5269a7d19f4a))
+  (text "All resistors: metal film 1% 0.6 W.  All electrolytics: Panasonic FC."
+    (at 165.1 71.12 0)
+    (effects
+      (font
+        (size 1.778 1.778))
+      (justify left bottom))
+    (uuid 5b8867bd-25b8-5cbf-a53a-2cd0607f180e))
+  (text "U1 tab is at -V: insulate from heatsink."
+    (at 165.1 152.4 0)
+    (effects
+      (font
+        (size 1.778 1.778))
+      (justify left bottom))
+    (uuid b8fc206b-e7c6-51cf-afc6-93b3b210c0c8))
+  (sheet_instances
+    (path "/"
+      (page "1"))))

@@ -1,0 +1,23 @@
+Qty,References,Value,Type / series,Manufacturer part (where fixed),Footprint,Fit
+2,C1 C10,10uF 50V,Panasonic FC,EEU-FC1H100L,CP_Radial_D5.0mm_P2.00mm,Fit
+1,C12,470pF,"C0G/film, DO NOT FIT (RF filter option)",,C_Rect_L7.2mm_W3.5mm_P5.00mm_FKS2_FKP2_MKS2_MKP2,DO NOT FIT
+1,C2,1uF 100V,"MKP/MKS film, P15mm",,C_Rect_L18.0mm_W8.0mm_P15.00mm_FKS3_FKP3,Fit
+2,C3 C4,100uF 50V,Panasonic FC,EEU-FC1H101,CP_Radial_D10.0mm_P5.00mm,Fit
+2,C5 C6,100nF 100V,MKS/MKP film,,C_Rect_L7.2mm_W3.5mm_P5.00mm_FKS2_FKP2_MKS2_MKP2,Fit
+4,C7 C8 C13 C14,2200uF 50V,Panasonic FC,EEU-FC1H222,CP_Radial_D18.0mm_P7.50mm,Fit
+2,C9 C11,10uF 100V,"MKS4 film (optional, as original)",,C_Rect_L31.5mm_W13.0mm_P27.50mm_MKS4,Fit
+1,D1,1N4148,,,D_DO-35_SOD27_P7.62mm_Horizontal,Fit
+1,J1,+V in,,,SolderWire-1.5sqmm_1x01_D1.7mm_OD3.9mm,Fit
+1,J2,0V in,,,SolderWire-1.5sqmm_1x01_D1.7mm_OD3.9mm,Fit
+1,J3,-V in,,,SolderWire-1.5sqmm_1x01_D1.7mm_OD3.9mm,Fit
+1,J4,SPK+,,,SolderWire-1.5sqmm_1x01_D1.7mm_OD3.9mm,Fit
+1,J5,SPK-,,,SolderWire-1.5sqmm_1x01_D1.7mm_OD3.9mm,Fit
+1,J6,Audio in,,,SolderWire-0.5sqmm_1x01_D0.9mm_OD2.3mm,Fit
+1,J7,Audio gnd,,,SolderWire-0.5sqmm_1x01_D0.9mm_OD2.3mm,Fit
+1,J8,Mute (+V = play),,,SolderWire-0.5sqmm_1x01_D0.9mm_OD2.3mm,Fit
+1,R1,680,Metal film 1% 0.6W,,R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,Fit
+1,R4,10k,Metal film 1% 0.6W,,R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,Fit
+3,R2 R3 R5,22k,Metal film 1% 0.6W,,R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,Fit
+1,R6,33k,Metal film 1% 0.6W,,R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,Fit
+1,R7,0R,0 ohm link (100R option for RF filter),,R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,Fit
+1,U1,TDA7294V,,,TO-220-15_P2.54x2.54mm_StaggerOdd_Lead4.58mm_Vertical,Fit
