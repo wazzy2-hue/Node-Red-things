@@ -1,0 +1,243 @@
+[
+  {
+    "id": "vbms_v3",
+    "type": "tab",
+    "label": "Virtual BMS (custom MQTT)",
+    "disabled": false,
+    "info": "Virtual BMS for Victron DVCC.\nReads the real BMS cell data, computes granular CVL/CCL/DCL, and publishes them\nthrough a virtual com.victronenergy.battery service. Select this virtual battery as\nthe *controlling BMS* in Settings -> DVCC. Keep conservative charge limits programmed\ndirectly into the MPPTs and inverter/charger as the hardware failsafe.\nTune everything in the CONFIG function node.",
+    "env": []
+  },
+  {
+    "id": "vbms_v3_hdr",
+    "type": "comment",
+    "z": "vbms_v3",
+    "name": "VERSION 3 :: custom MQTT BMS feed",
+    "info": "Source: a BMS publishing on its own MQTT topics (not the Victron dbus tree).\nEDIT the mqtt-in topic and the INGEST (custom) parser to match your payload.\nHandles either a cells[] array or precomputed max/min out of the box.",
+    "x": 120,
+    "y": 30,
+    "wires": []
+  },
+  {
+    "id": "vbms_v3_cfg_inj",
+    "type": "inject",
+    "z": "vbms_v3",
+    "name": "init config",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.3,
+    "topic": "",
+    "x": 120,
+    "y": 80,
+    "wires": [
+      [
+        "vbms_v3_cfg_fn"
+      ]
+    ]
+  },
+  {
+    "id": "vbms_v3_cfg_fn",
+    "type": "function",
+    "z": "vbms_v3",
+    "name": "CONFIG",
+    "func": "// == Virtual BMS :: CONFIG =====================================================\n// Edit to match YOUR pack, then redeploy. Fires once on start.\n// Per-cell volts assume LiFePO4. Change cellCount for your series count.\nconst cfg = {\n  cellCount: 16,            // series cells (16S~48V, 8S~24V, 4S~12V)\n\n  // setpoints (per cell, V)\n  cellSyncV:        3.55,   // cells at/above this  => treat as full\n  cellBalanceDelta: 0.08,   // OR (max-min) at/below this => balanced\n  cellProtectV:     3.60,   // begin folding charge back above this (max cell)\n  cellMaxV:         3.65,   // software ceiling: CCL->0, CVL clamped here\n  cellFloatV:       3.375,  // per-cell float\n\n  // currents (A)\n  chargeMax:     100,       // normal charge-current limit (CCL)\n  chargeHoldMin:   5,       // CCL floor kept during float\n  dischargeMax:  200,       // discharge-current limit (DCL)\n\n  // timers (ms)\n  watchdogMs:       20000,  // no fresh cell data for this long => SAFE mode\n  absorbHoldMaxMs:  7200000,// cap balance hold at 2h, then float anyway\n\n  // SAFE-mode fallback (your hardware charge limits are the REAL backstop)\n  safeCellV:     3.45,\n  safeChargeMax:   20\n};\nflow.set('cfg', cfg);\nflow.set('cvlAbsorb', +(cfg.cellSyncV  * cfg.cellCount).toFixed(2));\nflow.set('cvlFloat',  +(cfg.cellFloatV * cfg.cellCount).toFixed(2));\nflow.set('cvlCeil',   +(cfg.cellMaxV   * cfg.cellCount).toFixed(2));\nflow.set('cvlSafe',   +(cfg.safeCellV  * cfg.cellCount).toFixed(2));\nflow.set('stage', 'BULK');\nnode.status({fill:'blue', shape:'dot', text:'config loaded :: ' + cfg.cellCount + 'S'});\nreturn null;\n",
+    "outputs": 1,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 320,
+    "y": 80,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "vbms_v3_tick",
+    "type": "inject",
+    "z": "vbms_v3",
+    "name": "2s tick",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "2",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 1,
+    "topic": "vbms-tick",
+    "x": 120,
+    "y": 320,
+    "wires": [
+      [
+        "vbms_v3_ctrl"
+      ]
+    ]
+  },
+  {
+    "id": "vbms_v3_ctrl",
+    "type": "function",
+    "z": "vbms_v3",
+    "name": "CONTROLLER",
+    "func": "// == Virtual BMS :: CONTROLLER (state machine + fold-back + watchdog) =========\n// Runs on the 2s tick. Emits the virtual-battery property object on output 1.\n// Two-phase: (1) settle the charge stage, (2) derive CVL/CCL from that stage.\n// SAFE is an OUTPUT overlay on stale/missing data; it never erases the stage.\nconst cfg = flow.get('cfg');\nif (!cfg){ node.status({fill:'grey',shape:'ring',text:'no config yet'}); return null; }\n\nconst now   = Date.now();\nconst stale = (now - (flow.get('lastCellUpdate') || 0)) > cfg.watchdogMs;\nconst EPS   = 1e-6;                              // float-compare tolerance\n\nconst maxCell = flow.get('maxCell');\nconst minCell = flow.get('minCell');\nconst packV   = flow.get('packV');\nconst packI   = flow.get('packI');\nconst soc     = flow.get('soc');\n\nconst cvlAbsorb = flow.get('cvlAbsorb');\nconst cvlFloat  = flow.get('cvlFloat');\nconst cvlCeil   = flow.get('cvlCeil');\nconst cvlSafe   = flow.get('cvlSafe');\n\nlet stage = flow.get('stage') || 'BULK';         // persisted charge FSM state\nlet cvl, ccl, dcl = cfg.dischargeMax, hiCell = 0, imbal = 0, note = '', mode = stage;\n\nfunction r1(x){ return Math.round(x*10)/10; }\nfunction r2(x){ return Math.round(x*100)/100; }\nfunction r3(x){ return Math.round(x*1000)/1000; }\n\nfunction publish(){\n  flow.set('stage', stage);                      // persist FSM (not the SAFE overlay)\n  const payload = {\n    \"Info/MaxChargeVoltage\":    r2(cvl),\n    \"Info/MaxChargeCurrent\":    r1(Math.max(0, ccl)),\n    \"Info/MaxDischargeCurrent\": r1(dcl),\n    \"Alarms/HighCellVoltage\":   hiCell,\n    \"Alarms/CellImbalance\":     imbal\n  };\n  if (packV   != null) payload[\"Dc/0/Voltage\"]          = r2(packV);\n  if (packI   != null) payload[\"Dc/0/Current\"]          = r1(packI);\n  if (soc     != null) payload[\"Soc\"]                   = r1(soc);\n  if (maxCell != null) payload[\"System/MaxCellVoltage\"] = maxCell;\n  if (minCell != null) payload[\"System/MinCellVoltage\"] = minCell;\n  const delta = (maxCell != null && minCell != null) ? r3(maxCell - minCell) : null;\n  const dec = {mode:mode, stage:stage, cvl:payload[\"Info/MaxChargeVoltage\"],\n               ccl:payload[\"Info/MaxChargeCurrent\"], dcl:payload[\"Info/MaxDischargeCurrent\"],\n               maxCell:maxCell, minCell:minCell, delta:delta, soc:soc, note:note};\n  flow.set('decision', dec);\n  const col = (mode === 'SAFE') ? 'red' : (mode === 'FLOAT' ? 'green' : 'yellow');\n  node.status({fill:col, shape:'dot',\n    text: mode + ' cvl' + dec.cvl + ' ccl' + dec.ccl +\n          (delta != null ? ' d' + delta : '') + (note ? ' :: ' + note : '')});\n  return {payload:payload, decision:dec, connected:true};\n}\n\n// -- SAFE overlay: stale / missing cell data (hardware limits are the backstop)\nif (stale || maxCell == null || minCell == null){\n  mode = 'SAFE'; cvl = cvlSafe; ccl = cfg.safeChargeMax; note = 'stale/absent cell data';\n  return publish();                              // leaves flow('stage') untouched\n}\n\nconst delta  = maxCell - minCell;\nconst synced = (minCell >= cfg.cellSyncV - EPS) || (delta <= cfg.cellBalanceDelta + EPS);\n\nif (maxCell >= cfg.cellProtectV - EPS)        hiCell = 1;\nif (maxCell >= cfg.cellMaxV - EPS)            hiCell = 2;\nif (delta   >  cfg.cellBalanceDelta*1.5 + EPS) imbal = 1;\n\n// -- phase 1: FSM transitions (BULK -> ABSORB[+balance hold] -> FLOAT), chained\nif (stage === 'BULK' &&\n    (maxCell >= cfg.cellSyncV - EPS || (packV != null && packV >= cvlAbsorb - EPS))){\n  stage = 'ABSORB'; flow.set('absorbStart', now);\n}\nif (stage === 'ABSORB'){\n  const held = now - (flow.get('absorbStart') || now);\n  if (synced){ stage = 'FLOAT'; note = 'cells synced'; }\n  else if (held > cfg.absorbHoldMaxMs){ stage = 'FLOAT'; note = 'hold timeout'; }\n}\nif (stage === 'FLOAT' &&\n    maxCell < cfg.cellFloatV - 0.03 && (soc == null || soc < 95)){\n  stage = 'BULK';\n}\nmode = stage;\n\n// -- phase 2: setpoints from the settled stage -------------------------------\nif (stage === 'FLOAT'){ cvl = cvlFloat;  ccl = cfg.chargeHoldMin; }\nelse                  { cvl = cvlAbsorb; ccl = cfg.chargeMax; }   // BULK & ABSORB\n\n// -- high-cell fold-back overlay (trims CCL/CVL as the top cell climbs) -------\nif (maxCell > cfg.cellProtectV + EPS){\n  const span = Math.max(1e-4, cfg.cellMaxV - cfg.cellProtectV);\n  const frac = Math.min(1, (maxCell - cfg.cellProtectV) / span);  // 0..1\n  ccl = Math.max(0, Math.min(ccl, cfg.chargeMax * (1 - frac)));\n  cvl = Math.min(cvl, cvlCeil);\n  if (!note) note = 'fold-back ' + Math.round(frac*100) + '%';\n}\n\ncvl = Math.max(cvl, cvlFloat);     // never command below float\nreturn publish();\n",
+    "outputs": 1,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 560,
+    "y": 320,
+    "wires": [
+      [
+        "vbms_v3_vbat",
+        "vbms_v3_dbg"
+      ]
+    ]
+  },
+  {
+    "id": "vbms_v3_vbat",
+    "type": "victron-virtual",
+    "z": "vbms_v3",
+    "name": "VBMS virtual battery",
+    "device": "battery",
+    "default_values": true,
+    "battery_capacity": 280,
+    "include_battery_temperature": false,
+    "battery_voltage_preset": "48",
+    "battery_voltage_custom": 48,
+    "outputs": 1,
+    "x": 800,
+    "y": 300,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "vbms_v3_dbg",
+    "type": "debug",
+    "z": "vbms_v3",
+    "name": "decision",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "decision",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 800,
+    "y": 360,
+    "wires": []
+  },
+  {
+    "id": "vbms_v3_ka_inj",
+    "type": "inject",
+    "z": "vbms_v3",
+    "name": "keep-alive 30s",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "30",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 5,
+    "topic": "vbms-keepalive",
+    "x": 120,
+    "y": 460,
+    "wires": [
+      [
+        "vbms_v3_ka_fn"
+      ]
+    ]
+  },
+  {
+    "id": "vbms_v3_ka_fn",
+    "type": "function",
+    "z": "vbms_v3",
+    "name": "build keep-alive",
+    "func": "// Publish Victron MQTT keep-alive so dbus values keep streaming.\n// portalId is learned from the first N/<portal>/... message the ingest sees.\nconst portal = flow.get('portalId');\nif (!portal) return null;\nmsg.topic = 'R/' + portal + '/keepalive';\nmsg.payload = '';\nreturn msg;\n",
+    "outputs": 1,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 320,
+    "y": 460,
+    "wires": [
+      [
+        "vbms_v3_ka_out"
+      ]
+    ]
+  },
+  {
+    "id": "vbms_v3_ka_out",
+    "type": "mqtt out",
+    "z": "vbms_v3",
+    "name": "R/<portal>/keepalive",
+    "topic": "",
+    "qos": "0",
+    "retain": "false",
+    "respTopic": "",
+    "contentType": "",
+    "userProps": "",
+    "correl": "",
+    "expiry": "",
+    "broker": "b38406e40971a766",
+    "x": 560,
+    "y": 460,
+    "wires": []
+  },
+  {
+    "id": "vbms_v3_in_custom",
+    "type": "mqtt in",
+    "z": "vbms_v3",
+    "name": "custom BMS topic (EDIT)",
+    "topic": "bms/+/cells",
+    "qos": "1",
+    "datatype": "auto-detect",
+    "broker": "b38406e40971a766",
+    "nl": false,
+    "rap": true,
+    "rh": 0,
+    "inputs": 0,
+    "x": 140,
+    "y": 200,
+    "wires": [
+      [
+        "vbms_v3_ingest"
+      ]
+    ]
+  },
+  {
+    "id": "vbms_v3_ingest",
+    "type": "function",
+    "z": "vbms_v3",
+    "name": "INGEST (custom)",
+    "func": "// == Virtual BMS :: INGEST (custom MQTT) ======================================\n// EDIT to match your BMS payload. Two shapes handled out of the box:\n//   A) {\"cells\":[3.31,3.32,...],\"voltage\":53.2,\"current\":12.1,\"soc\":84}\n//   B) {\"maxCell\":3.36,\"minCell\":3.30,\"voltage\":53.2,\"soc\":84}\n// For a per-topic BMS, copy the dbus version's topic-routing instead.\nlet p = msg.payload;\nif (typeof p === 'string') { try { p = JSON.parse(p); } catch(e){ return null; } }\nif (!p || typeof p !== 'object') return null;\nif (Array.isArray(p.cells) && p.cells.length){\n  const cells = p.cells.map(Number).filter(x => !isNaN(x));\n  if (cells.length){\n    flow.set('maxCell', Math.max.apply(null, cells));\n    flow.set('minCell', Math.min.apply(null, cells));\n    flow.set('cellsSeen', cells.length);\n  }\n}\nif (p.maxCell != null) flow.set('maxCell', Number(p.maxCell));\nif (p.minCell != null) flow.set('minCell', Number(p.minCell));\nif (p.voltage != null) flow.set('packV',  Number(p.voltage));\nif (p.current != null) flow.set('packI',  Number(p.current));\nif (p.soc     != null) flow.set('soc',    Number(p.soc));\nflow.set('lastCellUpdate', Date.now());\nreturn null;\n",
+    "outputs": 1,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 360,
+    "y": 200,
+    "wires": [
+      []
+    ]
+  }
+]
